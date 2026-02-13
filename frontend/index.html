@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>陳卓璇 · 五光十色 · 應援首頁</title>
+  <!-- ========== 獨立 CSS 檔案：mainpage_styles.css ========== -->
+  <link rel="stylesheet" href="../frontend/css/mainPage_style.css">
+
+</head>
+<body>
+  <!-- 
+    ═════════ 陳卓璇 · 五光十色應援版 ═════════
+    左側圖標 | 右側導航 | 中央巨幅寫真
+    滿版光點、虹彩漸層、通透歡快
+  -->
+
+  <header>
+    <!-- 左側圖標：支援 image/logo.png，若不存在顯示CSS光之鑽石 -->
+    <img src="image/logo.png" alt="陳卓璇 應援圖標" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2262%22%20height%3D%2262%22%3E%3Ccircle%20cx%3D%2231%22%20cy%3D%2231%22%20r%3D%2230%22%20fill%3D%22%23ffe5f0%22%2F%3E%3C%2Fsvg%3E';">
+    
+    <!-- 右側導航選單 -->
+    <nav>
+      <ul class="menu">
+        <li><a href="mainpage.html">首頁</a></li>
+        <li><a href="portfolio.html">作品</a></li>
+        <li><a href="aboutme.html">關於我</a></li>
+        <li><a href="contactus.html">聯繫我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 中央超大應援寫真區 -->
+  <section class="responsive-image">
+    <div class="image-container">
+      <div class="image-caption">
+        <p>陳卓璇</p>
+        <p>璇聲不息，朝暮期許</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>版權所有 © 2025</p>
+  </footer>
+</body>
+  <script src="../frontend/js/mainPage_activies.js"></script>
+</html>
