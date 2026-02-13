@@ -11,11 +11,11 @@
           const y = ((e.clientY - rect.top) / rect.height) * 100;
           heroImage.style.backgroundPosition = `${x}% ${y}%`;
           // 疊加一層流動光澤
-          heroImage.style.backgroundImage = `url('../frontend/resources/image/mainPage.jpg'), 
+          heroImage.style.backgroundImage = `url('frontend/resources/image/mainPage.jpg'), 
             radial-gradient(circle at ${x}% ${y}%, rgba(255,235,150,0.4) 0%, transparent 60%)`;
         });
         heroImage.addEventListener('mouseleave', function() {
-          heroImage.style.backgroundImage = `url('../frontend/resources/image/mainPage.jpg')`;
+          heroImage.style.backgroundImage = `url(frontend/resources/image/mainPage.jpg')`;
           heroImage.style.backgroundPosition = 'center 20%';
         });
       }
@@ -106,7 +106,7 @@
 
       // 6. 如果圖片加載失敗，改用專屬應援底圖（文字光譜）
       const imgTest = new Image();
-      imgTest.src = '../frontend/resources/image/mainPage.jpg';
+      imgTest.src = 'frontend/resources/image/mainPage.jpg';
       imgTest.onerror = function() {
         if (heroImage) {
           heroImage.style.backgroundImage = 'linear-gradient(125deg, #ffe2ec, #fff7e6, #edfff0, #e1efff, #feeaff)';
