@@ -87,7 +87,7 @@
         0 0 40px 5px #ffe5b4;
       transition: 0.3s;
       /* 保留 img logo.png 相容，若圖片不存在則顯示CSS虹彩標誌 */
-      background-image: url('../resources/image/mainPage.jpg');
+      background-image: url('frontend/resources/image/mainPage.jpg');
       background-size: cover;
     }
 
