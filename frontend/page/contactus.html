@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>聯繫 · 陳卓璇 · 五光十色</title>
+  <link rel="stylesheet" href="../css/mainPage_style.css">
+  <style>
+    .contact-wrapper {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 5% 3rem;
+      position: relative;
+      z-index: 10;
+    }
+    .glow-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      text-align: center;
+      background: linear-gradient(145deg, #f5b0c5, #c49fca, #8fb3d9, #9cd5b2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 10px;
+      margin-bottom: 1rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+      border-radius: 48px;
+      padding: 2rem 1.8rem;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 30px #ffdae5;
+      transition: 0.3s;
+    }
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: scale(1.02);
+      box-shadow: 0 30px 50px #ffb6c1;
+    }
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 10px #ffb2c0);
+    }
+    .card-name {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(145deg, #d46f8d, #9283be);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px dotted #ffbfd5;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .contact-detail a, .contact-detail span {
+      color: #623b5b;
+      text-decoration: none;
+      font-size: 1.15rem;
+      background: rgba(253, 235, 240, 0.7);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid white;
+      word-break: break-word;
+    }
+    .contact-detail a:hover {
+      background: #ffe2ed;
+      color: #b34571;
+      box-shadow: 0 0 20px #ffbfd4;
+    }
+    .sub-warning {
+      background: rgba(255, 200, 210, 0.3);
+      border-radius: 60px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 3px solid #ffb3c6;
+      color: #6f3460;
+      font-size: 1.2rem;
+      margin: 2rem 0;
+      backdrop-filter: blur(5px);
+    }
+    .fan-org {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .fan-org span {
+      background: #fff0f5;
+      border-radius: 50px;
+      padding: 0.6rem 1.8rem;
+      border: 2px solid #ffcfdc;
+      color: #a13e72;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../../image/logo.png" alt="陳卓璇 應援圖標" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2262%22%20height%3D%2262%22%3E%3Ccircle%20cx%3D%2231%22%20cy%3D%2231%22%20r%3D%2230%22%20fill%3D%22%23ffe5f0%22%2F%3E%3C%2Fsvg%3E';">
+    <nav>
+      <ul class="menu">
+        <li><a href="../../index.html">首頁</a></li>
+        <li><a href="portfolio.html">作品</a></li>
+        <li><a href="aboutme.html">關於我</a></li>
+        <li><a href="contactus.html" style="background: linear-gradient(145deg, #ffe5f0, #fff5e6); color: #aa4e7a; padding: 0.3rem 0.8rem; border-radius: 30px; box-shadow: 0 0 20px #ffc1cc;">聯繫我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="flex:1;">
+    <div class="contact-wrapper">
+      <div class="glow-title">🤍 璇 風 集 結 🤍</div>
+      <p style="text-align: center; font-size: 1.5rem; color: #84587b;">歡迎透過官方渠道與我們一同應援</p>
+
+      <div class="contact-grid">
+        <!-- 個人官方 -->
+        <div class="contact-card">
+          <div class="card-icon">🌟</div>
+          <div class="card-name">陳卓璇 · 個人</div>
+          <div class="contact-detail">
+            <span>🧣 微博：@陳卓璇</span>
+            <span>🎵 抖音：陳卓璇 (577492111)</span>
+            <span>📕 小紅書：陳卓璇</span>
+            <span>📷 Instagram：krystalchan_</span>
+            <span>📺 bilibili：陳卓璇</span>
+            <span>快⼿：陳卓璇</span>
+          </div>
+        </div>
+
+        <!-- 工作室 & 經濟公司 -->
+        <div class="contact-card">
+          <div class="card-icon">✨</div>
+          <div class="card-name">工作室 · 經濟</div>
+          <div class="contact-detail">
+            <span>🧣 @陳卓璇工作室Official</span>
+            <span>🎵 抖音：陳卓璇工作室 (24658448309)</span>
+            <span>視頻號：陳卓璇工作室Official</span>
+            <span>🎶 好樂無荒Music (微博/小紅書/抖音)</span>
+          </div>
+        </div>
+
+        <!-- 後援會 / 網宣 -->
+        <div class="contact-card">
+          <div class="card-icon">🌀</div>
+          <div class="card-name">後援會 · 網宣</div>
+          <div class="contact-detail">
+            <span>🧣 官方後援會：陳卓璇官方後援會</span>
+            <span>📚 網宣站：陳卓璇的記憶儲藏館</span>
+            <span>📊 數據站：陳卓璇_樹空SPACE</span>
+            <span>⚔️ 反黑站：X-删存记事册</span>
+            <span>🎤 應援站：KrystalC-璇音中心</span>
+            <span>💚 微信服務號：璇風之家</span>
+            <span>🎬 bilibili後援：陳卓璇的記憶儲藏館</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 重要提示 -->
+      <div class="sub-warning">
+        ⚠️ 除以上列舉官方帳號外，請勿相信任何自稱「陳卓璇本人」於QQ、微信等私人渠道之訊息。<br>
+        謹防上當受騙，一起保護璇風大家庭 🤍
+      </div>
+
+      <!-- 圖站／個站／同款 -->
+      <div style="background: rgba(255,215,225,0.5); border-radius: 60px; padding: 2rem; backdrop-filter: blur(8px);">
+        <p style="font-size: 2rem; color: #aa588a; text-align: center; letter-spacing: 2px;">📸 應援圖站 · 捕捉瞬間</p>
+        <div class="fan-org">
+          <span>萬分之一丨陳卓璇</span>
+          <span>惟一璇擇丨陳卓璇</span>
+          <span>璇窩丨0813陳卓璇</span>
+          <span>BlingX·陳卓璇時尚手冊</span>
+        </div>
+        <p style="text-align: center; margin-top: 1.5rem; color: #794f70;">加入我們，一起記錄陳卓璇的每一個發光時刻。</p>
+      </div>
+
+      <!-- 應援郵箱？ 可自行增加 -->
+      <div style="text-align: center; margin: 3rem 0 1rem;">
+        <span style="background: #ffe0f0; padding: 0.8rem 3rem; border-radius: 60px; font-size: 1.3rem; color: #9b4f79; border: 2px solid white;">📧 商務合作 · 官方郵箱 (請洽工作室)</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>版權所有 © 2025 · 璇聲不息，朝暮期許</p>
+  </footer>
+  <script src="../js/mainPage_activity.js"></script>
+</body>
+</html>

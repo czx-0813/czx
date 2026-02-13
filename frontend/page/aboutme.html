@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>關於 · 陳卓璇 · 五光十色</title>
+  <link rel="stylesheet" href="../css/mainPage_style.css">
+  <style>
+    .about-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem 5%;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(16px);
+      border-radius: 60px 60px 40px 40px;
+      border: 2px solid white;
+      box-shadow: 0 20px 40px rgba(255,190,200,0.3);
+      position: relative;
+      z-index: 10;
+    }
+    .profile-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .profile-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #FFC0CB, #FFDAB9, #E6E6FA);
+      box-shadow: 0 0 0 6px white, 0 0 50px #fbb6c6;
+      background-image: url('../../image/logo.png'); /* 可替換為頭像 */
+      background-size: cover;
+    }
+    .name-tag {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #e6648f, #b45e9a, #6a85b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+    .sub-tag {
+      font-size: 1.5rem;
+      color: #aa4e7a;
+      letter-spacing: 6px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .info-item {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 40px;
+      padding: 1.3rem 1.5rem;
+      border: 2px solid transparent;
+      border-image: linear-gradient(145deg, #ffb7c5, #ffe0a3, #f5ffb1) 1;
+      box-shadow: 0 5px 18px #ffe2f0;
+    }
+    .info-label {
+      font-size: 1.1rem;
+      color: #7b4b70;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .info-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(145deg, #b45e9a, #5fa8a1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sns-section {
+      margin: 2.5rem 0 1rem;
+    }
+    .sns-title {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ee89a0, #be98c5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px solid #ffd0df;
+      padding-bottom: 0.5rem;
+    }
+    .sns-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.8rem;
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    .sns-list li {
+      font-size: 1.2rem;
+      background: rgba(255,245,250,0.8);
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      border: 1px solid white;
+      color: #6d3a62;
+      font-weight: 500;
+      box-shadow: 0 0 15px #ffced9;
+    }
+    .quote-block {
+      background: rgba(255, 220, 230, 0.4);
+      border-radius: 50px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+      border-left: 8px solid #ffb8d2;
+      color: #3f2a40;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../../image/logo.png" alt="陳卓璇 應援圖標" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2262%22%20height%3D%2262%22%3E%3Ccircle%20cx%3D%2231%22%20cy%3D%2231%22%20r%3D%2230%22%20fill%3D%22%23ffe5f0%22%2F%3E%3C%2Fsvg%3E';">
+    <nav>
+      <ul class="menu">
+        <li><a href="../../index.html">首頁</a></li>
+        <li><a href="portfolio.html">作品</a></li>
+        <li><a href="aboutme.html" style="background: linear-gradient(145deg, #ffe5f0, #fff5e6); color: #aa4e7a; padding: 0.3rem 0.8rem; border-radius: 30px; box-shadow: 0 0 20px #ffc1cc;">關於我</a></li>
+        <li><a href="contactus.html">聯繫我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="flex:1;">
+    <div class="about-container">
+      <div class="profile-header">
+        <div class="profile-avatar"></div>
+        <div>
+          <div class="name-tag">陳卓璇</div>
+          <div class="sub-tag">KrystalC</div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item"><span class="info-label">生日</span><div class="info-value">1997.08.13</div></div>
+        <div class="info-item"><span class="info-label">出生地</span><div class="info-value">貴州 · 貴陽</div></div>
+        <div class="info-item"><span class="info-label">粉絲名</span><div class="info-value">璇風</div></div>
+        <div class="info-item"><span class="info-label">應援色</span><div class="info-value">五光十色的白</div></div>
+        <div class="info-item"><span class="info-label">院校</span><div class="info-value">上海海事大學</div></div>
+        <div class="info-item"><span class="info-label">MBTI</span><div class="info-value">ISTJ</div></div>
+      </div>
+
+      <!-- 經典語錄 -->
+      <div class="quote-block">
+        「 永遠忠於熱愛 · 只要你往舞台上看，就能找到陳卓璇 」
+      </div>
+
+      <!-- 社交平台 (官方+後援會) -->
+      <div class="sns-section">
+        <div class="sns-title">✨ 官方 · 後援會帳號</div>
+        <ul class="sns-list">
+          <li>🧣 @陳卓璇</li><li>🎵 抖音: 陳卓璇</li><li>📕 小紅書: 陳卓璇</li><li>📷 ins: krystalchan_</li><li>📺 bilibili: 陳卓璇</li><li>⚡️ 工作室: @陳卓璇工作室Official</li><li>🎶 好樂無荒Music</li><li>🌀 後援會: 陳卓璇官方後援會</li><li>📚 網宣: 陳卓璇的記憶儲藏館</li>
+        </ul>
+      </div>
+
+      <!-- 應援站/圖站 -->
+      <div style="margin-top: 2rem;">
+        <p style="color: #a14a79; font-size: 1.3rem;">❤️ 應援圖站 · 萬分之一 · 惟一璇擇 · 璇窩0813</p>
+        <p style="color: #7b5b73;">同款 · BlingX 時尚手册 · 反黑 · X-删存记事册</p>
+      </div>
+
+      <!-- 后援會官站連結簡介 -->
+      <div style="background: #ffeef4; border-radius: 30px; padding: 1rem 2rem; margin-top: 2rem;">
+        <p style="color: #914b77;">更多資訊請關注 <strong>陳卓璇超話</strong> 及各官方平台。 應援口號：璇聲不息，朝暮期許 🤍</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>版權所有 © 2025 · 璇聲不息，朝暮期許</p>
+  </footer>
+  <script src="../js/mainPage_activity.js"></script>
+</body>
+</html>
