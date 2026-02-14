@@ -1,9 +1,9 @@
- // 陳卓璇 · 應援色首頁 — 光之動態
+// 陈卓璇 · 应援色首页 — 光之动态
  /*czx/frontend/js/mainPage_activity.js*/
     document.addEventListener('DOMContentLoaded', function() {
       'use strict';
 
-      // 1. 中央大圖光影游移 — 呼應五光十色
+      // 1. 中央大图光影游移 — 呼应五光十色
       const heroImage = document.querySelector('.image-container');
       if (heroImage) {
         heroImage.addEventListener('mousemove', function(e) {
@@ -11,7 +11,7 @@
           const x = ((e.clientX - rect.left) / rect.width) * 100;
           const y = ((e.clientY - rect.top) / rect.height) * 100;
           heroImage.style.backgroundPosition = `${x}% ${y}%`;
-          // 疊加一層流動光澤
+          // 迭加一层流动光泽
           heroImage.style.backgroundImage = `url('frontend/resources/image/mainPage.jpg'), 
             radial-gradient(circle at ${x}% ${y}%, rgba(255,235,150,0.4) 0%, transparent 60%)`;
         });
@@ -21,10 +21,10 @@
         });
       }
 
-      // 2. 導航「首頁」高亮 — 五光十色光暈
+      // 2. 导航「首页」高亮 — 五光十色光晕
       const navLinks = document.querySelectorAll('.menu li a');
       navLinks.forEach(link => {
-        if (link.getAttribute('href') === 'mainpage.html' || link.textContent.includes('首頁')) {
+        if (link.getAttribute('href') === 'mainpage.html' || link.textContent.includes('首页')) {
           link.style.background = 'linear-gradient(145deg, #ffe5f0, #fff5e6)';
           link.style.color = '#aa4e7a';
           link.style.padding = '0.3rem 0.8rem';
@@ -33,7 +33,7 @@
         }
       });
 
-      // 3. 左側logo 點擊應援 — 閃爍七彩
+      // 3. 左侧logo 点击应援 — 闪烁七彩
       const logo = document.querySelector('.logo');
       if (logo) {
         logo.addEventListener('click', function() {
@@ -50,7 +50,7 @@
         });
       }
 
-      // 4. 動態生成應援小光點 (滿版折射亮粉)
+      // 4. 动态生成应援小光点 (满版折射亮粉)
       const sparkleContainer = document.createElement('div');
       sparkleContainer.style.cssText = `
         position: fixed;
@@ -88,7 +88,7 @@
         sparkleContainer.appendChild(spark);
       }
 
-      // 添加 keyframes 動畫 (若尚未存在)
+      // 添加 keyframes 动画 (若尚未存在)
       const styleSheet = document.createElement("style");
       styleSheet.textContent = `
         @keyframes twinkle {
@@ -98,14 +98,14 @@
       `;
       document.head.appendChild(styleSheet);
 
-      // 5. 頁腳版權年份 + 應援小語
+      // 5. 页脚版权年份 + 应援小语
       const footer = document.querySelector('footer p');
     //   if (footer) {
     //     const year = new Date().getFullYear();
-    //     footer.innerHTML = `版權所有 © ${year}`;
+    //     footer.innerHTML = `版权所有 © ${year}`;
     //   }
 
-      // 6. 如果圖片加載失敗，改用專屬應援底圖（文字光譜）
+      // 6. 如果图片加载失败，改用专属应援底图（文字光谱）
       const imgTest = new Image();
       imgTest.src = 'frontend/resources/image/mainPage.jpg';
       imgTest.onerror = function() {
@@ -113,7 +113,7 @@
           heroImage.style.backgroundImage = 'linear-gradient(125deg, #ffe2ec, #fff7e6, #edfff0, #e1efff, #feeaff)';
           heroImage.style.backgroundSize = '400% 400%';
           heroImage.style.animation = 'gradientShift 12s ease infinite';
-          // 也加入文字光譜
+          // 也加入文字光谱
         }
       };
     });
