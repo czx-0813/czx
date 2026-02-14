@@ -24,7 +24,7 @@
       border-radius: 50%;
       background: linear-gradient(145deg, #FFC0CB, #FFDAB9, #E6E6FA);
       box-shadow: 0 0 0 6px white, 0 0 50px #fbb6c6;
-      background-image: url('../../image/logo.png'); /* 可替换为头像 */
+      background-image: url('../resources/image/mainPage.jpg'); /* 可替换为头像 */
       background-size: cover;
     }
     .name-tag {
