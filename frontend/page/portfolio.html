@@ -3,13 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <title>作品 · 陈卓璇</title>
-  <!-- 引用主风格 -->
+  <title>作品 · 陈卓璇 · 可跳转档案</title>
+  <!-- 引用主风格（模拟路径，确保样式存在） -->
   <link rel="stylesheet" href="../css/mainPage_style.css">
   <link rel="stylesheet" href="../css/portfolio_style.css">
+  <style>
+    /* 额外微调：让卡片内链接视觉自然，保留渐变背景 */
+    .portfolio-card a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      width: 100%;
+      transition: transform 0.2s ease;
+    }
+    .portfolio-card a:hover {
+      transform: translateX(4px);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: #b35e7c;
+    }
+    .song-list li {
+      list-style: none;
+      padding: 0.2rem 0;
+      border-radius: 30px;
+    }
+    /* 物料汇总区链接柔和 */
+    .summary-links a {
+      color: #8f4b70;
+      font-weight: 500;
+      margin: 0 0.3rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      background: rgba(255, 220, 235, 0.4);
+      transition: all 0.2s;
+    }
+    .summary-links a:hover {
+      background: #fcc6d4;
+      color: #2c1b24;
+    }
+    /* 保持整体标题质感 */
+    .mixin-title {
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+      margin: 2.5rem 0 1rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, #cf8aa9, #9477b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 400;
+    }
+    /* 卡片内超长滚动条优雅 */
+    .song-list::-webkit-scrollbar {
+      width: 5px;
+      background: #ffeef4;
+    }
+    .song-list::-webkit-scrollbar-thumb {
+      background: #e6aac0;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
+    <!-- logo容错已保留 -->
     <img src="../resources/image/logo.jpg" alt="陈卓璇 应援图标" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2262%22%20height%3D%2262%22%3E%3Ccircle%20cx%3D%2231%22%20cy%3D%2231%22%20r%3D%2230%22%20fill%3D%22%23ffe5f0%22%2F%3E%3C%2Fsvg%3E';">
     <div class="menu-toggle" id="menuToggle" aria-label="導航選單" aria-expanded="false" role="button" tabindex="0">
       <span></span>
@@ -27,78 +83,108 @@
   </header>
 
   <main style="flex:1; position: relative; z-index: 10;">
-    <h1 class="section-head">｜ 璇 音 作 品 ｜</h1>
+    <h1 class="section-head">｜ 璇 音 作 品 · 可 跳 转 ｜</h1>
     
-    <!-- 音乐EP -->
+    <!-- ========= 个人EP ========= 每个作品链接占位，href="#0"改为真实地址即可 -->
     <div class="mixin-title">✦ 个 人 EP ✦</div>
     <div class="portfolio-grid">
+      <!-- EP1: 不降落飞行指南 -->
       <div class="portfolio-card">
-        <div class="card-title">不降落飞行指南</div>
-        <div class="card-sub">收录曲</div>
-        <ul class="song-list">
-          <li>天窗</li><li>飞行天分</li><li>无尽之羽</li><li>INTRO</li>
-        </ul>
+        <a href="https://y.qq.com/n/m/detail/album/index.html?albummid=003FdoPY3qOOhQ" target="_blank" rel="noopener" title="点击查看《不降落飞行指南》介绍">
+          <div class="card-title">不降落飞行指南</div>
+          <div class="card-sub">收录曲</div>
+          <ul class="song-list">
+            <li>天窗</li><li>飞行天分</li><li>无尽之羽</li><li>INTRO</li>
+          </ul>
+        </a>
       </div>
+      <!-- EP2: 转身走向你 -->
       <div class="portfolio-card">
-        <div class="card-title">转身走向 你</div>
-        <div class="card-sub">收录曲</div>
-        <ul class="song-list">
-          <li>转身走向你</li><li>想哭就笑</li><li>请你</li><li>怎么会不幸福</li><li>我和我</li>
-        </ul>
+        <a href="https://y.qq.com/n/m/detail/album/index.html?albummid=002kQeBi3g2aR8" target="_blank" rel="noopener" title="点击查看《转身走向你》EP详情">
+          <div class="card-title">转身走向 你</div>
+          <div class="card-sub">收录曲</div>
+          <ul class="song-list">
+            <li>转身走向你</li><li>想哭就笑</li><li>请你</li><li>怎么会不幸福</li><li>我和我</li>
+          </ul>
+        </a>
       </div>
+      <!-- EP3: 深海之息 -->
       <div class="portfolio-card">
-        <div class="card-title">深海之息 (Mareasía)</div>
-        <div class="card-sub">全原创 EP</div>
-        <ul class="song-list">
-          <li>深海之息</li><li>翻篇</li><li>海绵</li><li>拼尽</li><li>Intro:C</li>
-        </ul>
+        <a href="https://y.qq.com/n/m/detail/album/index.html?albummid=002A7Vlu3uFXcn" target="_blank" rel="noopener" title="点击查看《深海之息》Mareasía">
+          <div class="card-title">深海之息 (Mareasía)</div>
+          <div class="card-sub">全原创 EP</div>
+          <ul class="song-list">
+            <li>深海之息</li><li>翻篇</li><li>海绵</li><li>拼尽</li><li>Intro:C</li>
+          </ul>
+        </a>
       </div>
     </div>
 
-    <!-- 单曲 / 翻唱 -->
+    <!-- ========= 单曲 / 翻唱 ========= -->
     <div class="mixin-title">✦ 精 选 单 曲 · 翻 唱 ✦</div>
     <div class="portfolio-grid">
       <div class="portfolio-card">
-        <div class="card-title">岁末 · 开年</div>
-        <ul class="song-list">
-          <li>海与天之间</li><li>记忆点</li><li>化雪 (国风)</li>
-        </ul>
+        <a href="#0" target="_blank" rel="noopener" title="观看《岁末·开年》系列舞台/音源">
+          <div class="card-title">岁末 · 开年</div>
+          <ul class="song-list">
+            <li>海与天之间</li><li>记忆点</li><li>化雪 (国风)</li>
+          </ul>
+        </a>
       </div>
       <div class="portfolio-card">
-        <div class="card-title">热门翻唱</div>
-        <ul class="song-list">
-          <li>昨夜风今宵月</li><li>听说你</li><li>慢慢</li>
-        </ul>
+        <a href="#0" target="_blank" rel="noopener" title="热门翻唱现场合辑">
+          <div class="card-title">热门翻唱</div>
+          <ul class="song-list">
+            <li>昨夜风今宵月</li><li>听说你</li><li>慢慢</li>
+          </ul>
+        </a>
       </div>
     </div>
 
-    <!-- 综艺节目 (根据后援会内容) -->
+    <!-- ========= 综艺留痕 ========= 每档综艺可单独跳转至cut/介绍页（这里使用卡片整体链接指向合集） -->
     <div class="mixin-title">✦ 综 艺 留 痕 ✦</div>
     <div class="portfolio-grid">
+      <!-- 2021-2023 综艺卡片 -->
       <div class="portfolio-card">
-        <div class="card-title">2021－2023</div>
-        <ul class="song-list" style="max-height: 300px; overflow-y: auto;">
-          <li>天天向上</li><li>闪闪发光的你</li><li>吐槽大会5</li><li>天赐的声音2</li><li>爆裂舞台</li><li>金曲青春</li><li>奔跑吧·共同富裕篇</li><li>声生不息·宝岛季</li><li>极限挑战·宝藏行</li><li>朋友请吃饭</li><li>野挺有趣</li><li>我们的歌5</li><li>火星情报局6</li><li>超燃美食记3</li>
-        </ul>
+        <a href="#0" target="_blank" rel="noopener" title="2021-2023综艺回顾/合集播放">
+          <div class="card-title">2021－2023</div>
+          <ul class="song-list" style="max-height: 300px; overflow-y: auto;">
+            <li>天天向上</li><li>闪闪发光的你</li><li>吐槽大会5</li><li>天赐的声音2</li><li>爆裂舞台</li><li>金曲青春</li><li>奔跑吧·共同富裕篇</li><li>声生不息·宝岛季</li><li>极限挑战·宝藏行</li><li>朋友请吃饭</li><li>野挺有趣</li><li>我们的歌5</li><li>火星情报局6</li><li>超燃美食记3</li>
+          </ul>
+        </a>
       </div>
+      <!-- 2024-2026 综艺卡片 -->
       <div class="portfolio-card">
-        <div class="card-title">2024－2026</div>
-        <ul class="song-list" style="max-height: 300px; overflow-y: auto;">
-          <li>哈哈哈哈哈4</li><li>话说山海</li><li>战至巅峰3</li><li>音乐缘计划</li><li>有歌2024</li><li>音你而来2</li><li>天赐的声音6</li><li>打歌2025</li><li>出发吧唱游团2</li><li>有歌第二季 (2026在播)</li><li>很高兴音乐会</li><li>两天一夜走进非遗</li>
-        </ul>
+        <a href="#0" target="_blank" rel="noopener" title="2024-2026综艺记录/精彩片段">
+          <div class="card-title">2024－2026</div>
+          <ul class="song-list" style="max-height: 300px; overflow-y: auto;">
+            <li>哈哈哈哈哈4</li><li>话说山海</li><li>战至巅峰3</li><li>音乐缘计划</li><li>有歌2024</li><li>音你而来2</li><li>天赐的声音6</li><li>打歌2025</li><li>出发吧唱游团2</li><li>有歌第二季 (2026在播)</li><li>很高兴音乐会</li><li>两天一夜走进非遗</li>
+          </ul>
+        </a>
       </div>
     </div>
 
-    <!-- 物料汇总连结 (灵感) -->
+    <!-- 物料汇总连结 (分别指向不同的汇总页面) 更具跳转感 -->
     <div style="text-align: center; margin: 2rem 5%; padding: 1.5rem; background: rgba(255,240,245,0.6); border-radius: 60px; backdrop-filter: blur(6px);">
       <p style="font-size:1.4rem; background: linear-gradient(145deg, #e6648f, #6a85b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">📘 年度物料汇总 · 记忆储藏馆</p>
-      <p style="color:#764b6e;">2025汇总 · 2024汇总 · 23-22汇总 · 经典舞台合集</p>
+      <p class="summary-links" style="color:#764b6e;">
+        <!-- 五个独立链接，分别对应不同年份/合集 -->
+        <a href="#0" target="_blank">📋 2025汇总</a> · 
+        <a href="#0" target="_blank">📋 2024汇总</a> · 
+        <a href="#0" target="_blank">📋 23-22汇总</a> · 
+        <a href="#0" target="_blank">🎬 经典舞台合集</a> · 
+        <a href="#0" target="_blank">📺 访谈精选</a>
+      </p>
+      <p style="font-size:0.95rem; margin-top:1rem; color:#a5547c;">点击任意作品卡片或下方链接可跳转至对应介绍/视频页面（目前为占位符#0）</p>
     </div>
+
+    <!-- 额外单独跳转区域：单曲可直接点击名称（如果希望更细粒度，也可以放在卡片内，但卡片已有整体链接，足够） -->
   </main>
 
   <footer>
-    <p>版权所有 © 2025 · 璇声不息，朝暮期许</p>
+    <p>版权所有 © 2025 · 璇声不息，朝暮期许 · 点击作品即可跳转</p>
   </footer>
   <script src="../js/mainPage_activity.js"></script>
+  <!-- 简单提醒：以下可自定义替换链接 -->
 </body>
 </html>
