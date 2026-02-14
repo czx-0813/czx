@@ -1,13 +1,10 @@
-
-/*czx/frontend/css/mainPage_style.css*/
-    * {
+ * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      /* 應援色基調：以純白光束為底，折射出五彩光暈 */
       background: radial-gradient(circle at 20% 30%, #fff9f2, #fff0e7);
       font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
       color: #2a1f2c;
@@ -18,7 +15,7 @@
       position: relative;
     }
 
-    /* 五光十色的流動光線（背景動態） */
+    /* 五光十色流动光线（背景动态） */
     body::before {
       content: '';
       position: fixed;
@@ -43,13 +40,12 @@
       100% { opacity: 1; transform: scale(1.05); }
     }
 
-    /* 所有內容都在光之上 */
     header, .responsive-image, footer {
       position: relative;
       z-index: 10;
     }
 
-    /* ----- 頁首：左圖標/右導航，虹彩邊框 ----- */
+    /* ----- 页头：左图标 + 右导航（始终可见，无汉堡）----- */
     header {
       display: flex;
       justify-content: space-between;
@@ -64,60 +60,19 @@
       box-shadow: 0 4px 20px rgba(255, 160, 210, 0.2);
       flex-wrap: wrap;
     }
-  .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
-      padding: 8px 6px;
-      cursor: pointer;
-      border: 1px solid rgba(255, 180, 200, 0.6);
-      box-shadow: 0 0 15px rgba(255, 200, 220, 0.5);
-      transition: 0.2s;
-    }
 
-    .menu-toggle span {
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #ff88aa, #ffb88c, #fff2b0, #a8e0c0, #b0c8ff, #e0b0ff);
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-    /* 左側圖標：光之鑽 · 陳卓璇 */
+    /* logo 图片样式 */
     .logo {
       width: 62px;
       height: 62px;
-      background: radial-gradient(circle at 40% 40%, #fffcf0, #ffe6f0);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #6a3e6b;
+      object-fit: cover;
+      background: radial-gradient(circle at 40% 40%, #fffcf0, #ffe6f0);
       box-shadow: 
         0 0 0 3px rgba(255, 255, 255, 0.9),
         0 0 20px 2px #ffb8d2,
         0 0 40px 5px #ffe5b4;
       transition: 0.3s;
-      background-image: url('frontend/resources/image/logo.jpg');
-      background-size: cover;
     }
 
     .logo:hover {
@@ -125,7 +80,7 @@
       box-shadow: 0 0 30px 6px #ffb3c6, 0 0 50px 12px #ffe4ac;
     }
 
-    /* 右側導航 — 明亮虹彩 */
+    /* 导航始终显示为行内 flex，无汉堡控制 */
     nav {
       display: flex;
     }
@@ -149,7 +104,6 @@
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
     }
 
-    /* 導航底線：五光十色 */
     .menu li a::after {
       content: '';
       position: absolute;
@@ -173,7 +127,7 @@
       width: 100%;
     }
 
-    /* ===== 中央超大圖 — 璀璨光感 ===== */
+    /* ===== 中央超大图 — 璀璨光感 ===== */
     .responsive-image {
       flex: 1;
       display: flex;
@@ -195,7 +149,7 @@
         0 0 0 2px rgba(255, 255, 255, 0.9),
         0 0 0 6px rgba(255, 240, 245, 0.5);
       background: #ffe5e5;
-      /* 明星大圖：陳卓璇 五光十色應援氛圍 */
+      /* 明星大图：陈卓璇 五光十色应援氛围 */
       background-image: url('../resources/image/mainPage.jpg');
       background-size: cover;
       background-position: center 20%;
@@ -205,7 +159,7 @@
       transition: 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
     }
 
-    /* 多彩光暈疊加 — 應援色濾鏡 */
+    /* 多彩光晕叠加 — 应援色滤镜 */
     .image-container::before {
       content: "";
       position: absolute;
@@ -221,7 +175,7 @@
       mix-blend-mode: overlay;
     }
 
-    /* 文字說明 — 輕透白、虹彩字 */
+    /* 文字说明 — 轻透白、虹彩字 */
     .image-caption {
       position: relative;
       z-index: 20;
@@ -238,35 +192,32 @@
       gap: 0.5rem;
     }
 
-    /* 完全覆蓋原有數字，以陳卓璇光感標語呈現 */
     .image-caption p:first-child {
-  font-size: 3.2rem;  /* 直接設定文字大小 */
-  font-weight: 800;
-  letter-spacing: 12px;
-  background: linear-gradient(135deg, #e6648f, #b45e9a, #6a85b6, #5fa8a1, #e8b35e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 20px rgba(255, 200, 220, 0.8), 0 0 40px #ffeec2;
-  line-height: 1.2;
-  margin: 0; /* 確保沒有多餘間距 */
-}
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: 12px;
+      background: linear-gradient(135deg, #e6648f, #b45e9a, #6a85b6, #5fa8a1, #e8b35e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 20px rgba(255, 200, 220, 0.8), 0 0 40px #ffeec2;
+      line-height: 1.2;
+      margin: 0;
+    }
 
+    .image-caption p:last-child {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 6px;
+      background: linear-gradient(45deg, #ee89a0, #be98c5, #77a8c7, #8fc9a5, #f3ce7a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 18px #fff0d4;
+      margin: 0;
+    }
 
-  .image-caption p:last-child {
-  font-size: 2rem;  /* 直接設定文字大小 */
-  font-weight: 400;
-  letter-spacing: 6px;
-  background: linear-gradient(45deg, #ee89a0, #be98c5, #77a8c7, #8fc9a5, #f3ce7a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 18px #fff0d4;
-  margin: 0; /* 確保沒有多餘間距 */
-}
-
-
-    /* 大圖懸浮，光感加倍 */
+    /* 大图悬浮光感加倍 */
     .image-container:hover {
       transform: scale(1.01) translateY(-5px);
       box-shadow: 
@@ -275,7 +226,7 @@
         0 0 0 8px rgba(255, 210, 230, 0.7);
     }
 
-    /* 頁尾 — 五彩色系 */
+    /* 页尾 — 五彩色系 */
     footer {
       text-align: center;
       padding: 1.6rem;
@@ -290,84 +241,7 @@
       box-shadow: 0 -8px 30px rgba(255, 180, 200, 0.2);
     }
 
-    /* 響應式微調 */
-    @media (max-width: 780px) {
-       .menu-toggle {
-        display: flex;  /* 显示汉堡 */
-      }
-
-      nav {
-        order: 3; /* 让导航移到最下方 */
-        width: 100%;
-        position: absolute;
-        top: 100%;      /* 紧贴 header 下方 */
-        left: 0;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 2px solid transparent;
-        border-image: linear-gradient(90deg, #ffb1bc, #ffdbb5, #fdffb0, #bdebbe, #b4cdff, #efc3ff) 1;
-        box-shadow: 0 20px 20px -10px rgba(255, 150, 180, 0.3);
-        padding: 1rem 0;
-        border-radius: 0 0 30px 30px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-        z-index: 99;
-      }
-
-      nav.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-        width: 100%;
-      }
-
-      .menu li a {
-        font-size: 1.3rem;
-        padding: 0.6rem 2rem;
-        display: inline-block;
-        border-radius: 40px;
-      }
-
-      .menu li a:hover {
-        background: rgba(255, 230, 240, 0.9);
-      }
-
-      /* 修正中央图片在小屏的间距 */
-      .responsive-image {
-        padding: 1rem 4%;
-      }
-
-      .image-caption p:first-child {
-        font-size: 2.4rem;    /* 保持刚才直接设置的样式，不依赖伪元素 */
-        letter-spacing: 6px;
-      }
-
-      .image-caption p:last-child {
-        font-size: 1.4rem;
-        letter-spacing: 3px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .menu {
-        gap: 0.9rem;
-      }
-    }
-
-    /* 滾動條 光之軌跡 */
+    /* 滚动条 光之轨迹 */
     ::-webkit-scrollbar {
       width: 12px;
       background: #ffe9f2;
@@ -376,4 +250,107 @@
       background: linear-gradient(145deg, #ffb6c1, #ffdab9);
       border-radius: 20px;
       border: 2px solid white;
+    }
+
+    /* ========== 响应式优化：移除了汉堡菜单，但保留小屏导航自适应及文字防遮盖 ========== */
+    @media (max-width: 780px) {
+      /* 小屏下导航可能换行，采用内联折行策略 */
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 4%;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.8rem;  /* 行距与列距 */
+      }
+
+      .menu li a {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.2rem;
+      }
+
+      /* 中央图片容器在小屏的上下间距调整，防止文字被切 / 遮盖 */
+      .responsive-image {
+        padding: 1rem 4% 1.8rem 4%;   /* 增加底部 padding 给文字留呼吸空间 */
+      }
+
+      /* 图片容器内部文字区域缩小字号+减少内边距，确保完全显示且不被页脚遮盖 */
+      .image-caption {
+        padding: 1.5rem 1.8rem;
+      }
+
+      .image-caption p:first-child {
+        font-size: 2.4rem;
+        letter-spacing: 6px;
+        word-break: break-word;
+      }
+
+      .image-caption p:last-child {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+      }
+
+      /* 保证 footer 不叠加压迫 */
+    }
+
+    @media (max-width: 550px) {
+      /* 极端小屏进一步加强 */
+      .image-caption {
+        padding: 1.2rem 1.2rem;
+      }
+      .image-caption p:first-child {
+        font-size: 2rem;
+        letter-spacing: 4px;
+      }
+      .image-caption p:last-child {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+      }
+      /* 同时减少footer上下边距让视觉平衡 */
+      footer {
+        padding: 1.2rem 0.8rem;
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+      }
+
+      .menu li a {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .menu {
+        gap: 0.7rem;
+      }
+      .menu li a {
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+    }
+
+    /* 如果高度超短，确保 caption 可见 (极少情况) */
+    @media (max-height: 600px) and (max-width: 780px) {
+      .responsive-image {
+        padding: 0.5rem 4%;
+      }
+      .image-caption {
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+    /* header 超小屏处理 */
+    @media (max-width: 480px) {
+      .logo {
+        width: 52px;
+        height: 52px;
+      }
     }
