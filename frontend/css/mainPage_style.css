@@ -1,4 +1,5 @@
- * {
+ /* ========== 全局重置 & 五光十色背景 ========== */
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -15,7 +16,7 @@
       position: relative;
     }
 
-    /* 五光十色流动光线（背景动态） */
+    /* 流动光线 (原index特效) */
     body::before {
       content: '';
       position: fixed;
@@ -45,12 +46,11 @@
       z-index: 10;
     }
 
-    /* ----- 页头：左图标 + 右导航（始终可见，无汉堡）----- */
+    /* ========== 头部：LOGO + 汉堡菜单按钮 (从AdminPage移植交互样式) ========== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
       padding: 1rem 5%;
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(12px);
@@ -61,7 +61,7 @@
       flex-wrap: wrap;
     }
 
-    /* logo 图片样式 */
+    /* logo 图片 (保留原样式) */
     .logo {
       width: 62px;
       height: 62px;
@@ -80,9 +80,42 @@
       box-shadow: 0 0 30px 6px #ffb3c6, 0 0 50px 12px #ffe4ac;
     }
 
-    /* 导航始终显示为行内 flex，无汉堡控制 */
+    /* ----- 汉堡菜单按钮 (完全借鉴AdminPage的样式与交互类) ----- */
+    .menu-toggle {
+      display: none;  /* 默认隐藏，移动端显示 */
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 1100;
+      transition: all 0.2s ease;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #FF9AA2, #FFD6A5, #FDFFB6);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    /* 打开状态下的汉堡动画 (X) */
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+      background: #e6648f;
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+      background: #e6648f;
+    }
+
+    /* 导航区：桌面默认flex显示；移动端由js控制显示/隐藏 */
     nav {
       display: flex;
+      transition: all 0.3s ease;
     }
 
     .menu {
@@ -102,6 +135,7 @@
       position: relative;
       transition: 0.25s;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
     }
 
     .menu li a::after {
@@ -127,7 +161,7 @@
       width: 100%;
     }
 
-    /* ===== 中央超大图 — 璀璨光感 ===== */
+    /* ===== 中央超大图 — 璀璨光感 (原样保留) ===== */
     .responsive-image {
       flex: 1;
       display: flex;
@@ -159,7 +193,6 @@
       transition: 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
     }
 
-    /* 多彩光晕叠加 — 应援色滤镜 */
     .image-container::before {
       content: "";
       position: absolute;
@@ -175,7 +208,6 @@
       mix-blend-mode: overlay;
     }
 
-    /* 文字说明 — 轻透白、虹彩字 */
     .image-caption {
       position: relative;
       z-index: 20;
@@ -217,7 +249,6 @@
       margin: 0;
     }
 
-    /* 大图悬浮光感加倍 */
     .image-container:hover {
       transform: scale(1.01) translateY(-5px);
       box-shadow: 
@@ -226,7 +257,7 @@
         0 0 0 8px rgba(255, 210, 230, 0.7);
     }
 
-    /* 页尾 — 五彩色系 */
+    /* 页尾 */
     footer {
       text-align: center;
       padding: 1.6rem;
@@ -241,7 +272,7 @@
       box-shadow: 0 -8px 30px rgba(255, 180, 200, 0.2);
     }
 
-    /* 滚动条 光之轨迹 */
+    /* 滚动条 */
     ::-webkit-scrollbar {
       width: 12px;
       background: #ffe9f2;
@@ -252,38 +283,70 @@
       border: 2px solid white;
     }
 
-    /* ========== 响应式优化：移除了汉堡菜单，但保留小屏导航自适应及文字防遮盖 ========== */
-    @media (max-width: 780px) {
-      /* 小屏下导航可能换行，采用内联折行策略 */
-      header {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 1rem 4%;
+    /* ========== 响应式 + 汉堡菜单激活样式 ========== */
+    @media (max-width: 992px) {  /* 借鉴AdminPage的断点，移动端汉堡出现 */
+      .menu-toggle {
+        display: flex;   /* 显示汉堡按钮 */
       }
 
       nav {
+        /* 移动端默认隐藏，显示时通过JS添加show类 */
+        display: none;
         width: 100%;
-        justify-content: center;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-top: 1rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 170, 200, 0.3);
+      }
+
+      nav.show {
+        display: flex;   /* 汉堡打开时显示 */
+        flex-direction: column;
       }
 
       .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem 1.8rem;  /* 行距与列距 */
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        align-items: center;
+      }
+
+      .menu li {
+        width: 100%;
+        text-align: center;
       }
 
       .menu li a {
+        display: block;
+        padding: 0.75rem 1rem;
         font-size: 1.2rem;
-        padding: 0.4rem 0.2rem;
+        white-space: normal;
+        border-radius: 0.5rem;
       }
 
-      /* 中央图片容器在小屏的上下间距调整，防止文字被切 / 遮盖 */
+      .menu li a:hover {
+        background-color: rgba(255, 220, 240, 0.7);
+      }
+
+      /* 调整header内间距，使汉堡垂直居中 */
+      header {
+        align-items: center;
+      }
+    }
+
+    /* 原有小屏优化保留，并适配汉堡导航打开时内容下推 */
+    @media (max-width: 780px) {
+      header {
+        padding: 0.8rem 4%;
+      }
+
       .responsive-image {
-        padding: 1rem 4% 1.8rem 4%;   /* 增加底部 padding 给文字留呼吸空间 */
+        padding: 1rem 4% 1.8rem 4%;
       }
 
-      /* 图片容器内部文字区域缩小字号+减少内边距，确保完全显示且不被页脚遮盖 */
       .image-caption {
         padding: 1.5rem 1.8rem;
       }
@@ -299,11 +362,14 @@
         letter-spacing: 3px;
       }
 
-      /* 保证 footer 不叠加压迫 */
+      footer {
+        padding: 1.2rem 0.8rem;
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+      }
     }
 
     @media (max-width: 550px) {
-      /* 极端小屏进一步加强 */
       .image-caption {
         padding: 1.2rem 1.2rem;
       }
@@ -315,42 +381,18 @@
         font-size: 1.2rem;
         letter-spacing: 2px;
       }
-      /* 同时减少footer上下边距让视觉平衡 */
-      footer {
-        padding: 1.2rem 0.8rem;
-        font-size: 0.95rem;
-        letter-spacing: 2px;
-      }
-
-      .menu li a {
-        font-size: 1.1rem;
+      .logo {
+        width: 52px;
+        height: 52px;
       }
     }
 
-    @media (max-width: 380px) {
-      .menu {
-        gap: 0.7rem;
-      }
-      .menu li a {
-        font-size: 1rem;
-        letter-spacing: 1px;
-      }
-    }
-
-    /* 如果高度超短，确保 caption 可见 (极少情况) */
+    /* 超短屏幕优化 */
     @media (max-height: 600px) and (max-width: 780px) {
       .responsive-image {
         padding: 0.5rem 4%;
       }
       .image-caption {
         padding: 0.8rem 1.5rem;
-      }
-    }
-
-    /* header 超小屏处理 */
-    @media (max-width: 480px) {
-      .logo {
-        width: 52px;
-        height: 52px;
       }
     }
