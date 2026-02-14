@@ -1,0 +1,100 @@
+.contact-wrapper {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 5% 3rem;
+      position: relative;
+      z-index: 10;
+    }
+    .glow-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      text-align: center;
+      background: linear-gradient(145deg, #f5b0c5, #c49fca, #8fb3d9, #9cd5b2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 10px;
+      margin-bottom: 1rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+      border-radius: 48px;
+      padding: 2rem 1.8rem;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 30px #ffdae5;
+      transition: 0.3s;
+    }
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: scale(1.02);
+      box-shadow: 0 30px 50px #ffb6c1;
+    }
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 10px #ffb2c0);
+    }
+    .card-name {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(145deg, #d46f8d, #9283be);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px dotted #ffbfd5;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .contact-detail a, .contact-detail span {
+      color: #623b5b;
+      text-decoration: none;
+      font-size: 1.15rem;
+      background: rgba(253, 235, 240, 0.7);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid white;
+      word-break: break-word;
+    }
+    .contact-detail a:hover {
+      background: #ffe2ed;
+      color: #b34571;
+      box-shadow: 0 0 20px #ffbfd4;
+    }
+    .sub-warning {
+      background: rgba(255, 200, 210, 0.3);
+      border-radius: 60px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 3px solid #ffb3c6;
+      color: #6f3460;
+      font-size: 1.2rem;
+      margin: 2rem 0;
+      backdrop-filter: blur(5px);
+    }
+    .fan-org {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .fan-org span {
+      background: #fff0f5;
+      border-radius: 50px;
+      padding: 0.6rem 1.8rem;
+      border: 2px solid #ffcfdc;
+      color: #a13e72;
+      font-weight: 600;
+    }
