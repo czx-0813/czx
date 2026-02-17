@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>EP介绍 · 陈卓璇 · 动态加载</title>
+  <!-- 引用主风格 (模拟路径) -->
+  <link rel="stylesheet" href="../css/mainPage_style.css">
+   <link rel="stylesheet" href="../css/intorduce_ep_style.css">
+</head>
+<body>
+  <header>
+    <img src="../resources/image/logo.jpg" alt="陈卓璇 应援图标" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2262%22%20height%3D%2262%22%3E%3Ccircle%20cx%3D%2231%22%20cy%3D%2231%22%20r%3D%2230%22%20fill%3D%22%23ffe5f0%22%2F%3E%3C%2Fsvg%3E';">
+    <div class="menu-toggle" id="menuToggle" aria-label="導航選單" aria-expanded="false" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navMenu">
+      <ul class="menu">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="portfolio.html" style="background: linear-gradient(145deg, #ffe5f0, #fff5e6); color: #aa4e7a; padding: 0.3rem 0.8rem; border-radius: 30px; box-shadow: 0 0 20px #ffc1cc;">作品</a></li>
+        <li><a href="aboutme.html">关于我</a></li>
+        <li><a href="contactus.html">联系我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="flex:1;">
+    <h1 class="section-head" id="dynamicTitle">｜ 璇 · EP 介 绍 ｜</h1>
+
+    <!-- 专辑介绍容器 (动态数据填充) -->
+    <div class="ep-container" id="epContainer">
+      <!-- 主卡片：所有内容将通过JavaScript动态生成 -->
+    </div>
+  </main>
+
+  <footer>
+    <p>版权所有 © 2025 · 璇声影像 · 数据驱动EP介绍</p>
+  </footer>
+  <script src="../js/mainPage_activity.js"></script>
+  <script src="../js/introduce_ep_activity.js"></script>
+  <script>
+ 
+  </script>
+
+  <!-- 说明：从portfolio.html传递参数示例
+    在portfolio.html的每个EP卡片链接中，可以这样跳转：
+    <a href="introduce_ep.html?id=ep1">  或者  <a href="introduce_ep.html?index=0">
+    这样点击不同EP就会加载对应的介绍数据。
+    已内置三个EP的数据，如需新增或修改，只需在epData数组中添加/编辑即可。
+  -->
+</body>
+</html>

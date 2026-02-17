@@ -1,87 +1,275 @@
+/* ===== 原 portfolio_style.css 完整保留 ===== */
+.portfolio-grid-original {  /* 为避免类名冲突，将原类改名为-original，但下面我们会复用.portfolio-grid，故保留原定义但实际使用新grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+/* 原卡片样式保留变量，但我们稍后采用新的卡片设计，故更名为 .portfolio-card-original 以备参考；但页面里用的是新卡片，故保留原样式名不冲突即可 */
+.portfolio-card-original {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 32px;
+  padding: 1.8rem 1.5rem;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #ffb7c5, #ffe0a3, #f5ffb1, #bdf2c0, #b1d6ff, #e9beff) 1;
+  box-shadow: 0 15px 35px rgba(255, 180, 200, 0.25);
+  transition: 0.3s;
+  color: #2a1f2c;
+}
+.portfolio-card-original:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 45px rgba(255, 150, 200, 0.45);
+  background: rgba(255, 255, 255, 0.8);
+}
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e6648f, #b45e9a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+.card-sub {
+  font-size: 1.1rem;
+  color: #8b5a7a;
+  border-left: 5px solid #ffb8d2;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+.song-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+.song-list li {
+  background: rgba(255, 225, 240, 0.7);
+  border-radius: 40px;
+  padding: 0.3rem 1.2rem;
+  font-size: 0.95rem;
+  border: 1px solid white;
+  color: #5a3e56;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #ffe2f0;
+}
+.section-head {
+  text-align: center;
+  font-size: 2.8rem;
+  letter-spacing: 8px;
+  margin: 2rem 0 1rem;
+  background: linear-gradient(135deg, #ee89a0, #be98c5, #77a8c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 10;
+}
+.mixin-title {
+  font-size: 1.8rem;
+  margin: 1.5rem 0 1rem 5%;
+  background: linear-gradient(145deg, #b45e9a, #5fa8a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* 原媒体查询将在新样式后重新定义，确保手机单列 */
+
+/* ===== 新增强化：三列网格 + 图片卡片 (完全融合原设计语言) ===== */
+/* 重置基础，但不干扰原样式 */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+body {
+  background: linear-gradient(145deg, #fff9fb 0%, #fdeff2 100%);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header { 
+  position: relative; 
+  z-index: 20; 
+}
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  color: #a36b87;
+  background: rgba(255, 235, 240, 0.5);
+  backdrop-filter: blur(4px);
+  margin-top: 3rem;
+  border-top: 1px solid #ffd9e6;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* 新网格 —— 覆盖原 .portfolio-grid 定义，实现固定三列(桌面) / 手机一列 */
 .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem 5%;
-      max-width: 1400px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 10;
-    }
-    .portfolio-card {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 32px;
-      padding: 1.8rem 1.5rem;
-      border: 2px solid transparent;
-      border-image: linear-gradient(135deg, #ffb7c5, #ffe0a3, #f5ffb1, #bdf2c0, #b1d6ff, #e9beff) 1;
-      box-shadow: 0 15px 35px rgba(255, 180, 200, 0.25);
-      transition: 0.3s;
-      color: #2a1f2c;
-    }
-    .portfolio-card:hover {
-      transform: translateY(-8px) scale(1.01);
-      box-shadow: 0 25px 45px rgba(255, 150, 200, 0.45);
-      background: rgba(255, 255, 255, 0.8);
-    }
-    .card-title {
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #e6648f, #b45e9a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-      letter-spacing: 2px;
-    }
-    .card-sub {
-      font-size: 1.1rem;
-      color: #8b5a7a;
-      border-left: 5px solid #ffb8d2;
-      padding-left: 1rem;
-      margin: 1rem 0;
-      font-weight: 500;
-    }
-    .song-list {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1rem;
-    }
-    .song-list li {
-      background: rgba(255, 225, 240, 0.7);
-      border-radius: 40px;
-      padding: 0.3rem 1.2rem;
-      font-size: 0.95rem;
-      border: 1px solid white;
-      color: #5a3e56;
-      font-weight: 500;
-      box-shadow: 0 2px 8px #ffe2f0;
-    }
-    .section-head {
-      text-align: center;
-      font-size: 2.8rem;
-      letter-spacing: 8px;
-      margin: 2rem 0 1rem;
-      background: linear-gradient(135deg, #ee89a0, #be98c5, #77a8c7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: relative;
-      z-index: 10;
-    }
-    /* 翻唱、综艺等小标 */
-    .mixin-title {
-      font-size: 1.8rem;
-      margin: 1.5rem 0 1rem 5%;
-      background: linear-gradient(145deg, #b45e9a, #5fa8a1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    @media (max-width: 600px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .section-head { font-size: 2.2rem; }
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 三列 */
+  gap: 1.8rem;
+  padding: 1.5rem 4%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 新卡片设计 —— 继承原卡片柔和质感，加入图片区域 */
+.portfolio-card {
+  background: rgba(255, 250, 245, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 30px rgba(255, 190, 210, 0.25);
+  transition: all 0.3s cubic-bezier(0.1, 0.7, 0.3, 1);
+  overflow: hidden;  /* 图片圆角 */
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 40px rgba(255, 140, 190, 0.35);
+  background: rgba(255, 245, 250, 0.85);
+  border-color: #ffcfdf;
+}
+
+/* 卡片内图片 - 正方形相片框 */
+.card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* 确保正方形 */
+  object-fit: cover;    /* 保证图片填充且不变形，多余部分裁切 */
+  display: block;
+  background: #fadbe9;  /* 兜底颜色 */
+  transition: transform 0.4s ease;
+  border-bottom: 2px solid #ffe2f0;
+}
+.portfolio-card:hover .card-img {
+  transform: scale(1.02);
+}
+
+/* 卡片文字区 (复用原 .card-title/.card-sub/.song-list 但微调间距) */
+.card-content {
+  padding: 1.4rem 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+/* 原 .card-title 字体略大，在新卡片内适当调整，但仍保留渐变 */
+.portfolio-card .card-title {
+  font-size: 1.8rem;   /* 稍微缩小以适应卡片 */
+  margin-bottom: 0.2rem;
+}
+.portfolio-card .card-sub {
+  font-size: 1rem;
+  margin: 0.3rem 0 0.5rem;
+  border-left: 4px solid #feb1c5;
+  padding-left: 0.8rem;
+}
+/* 歌曲列表保持原药丸，但缩小一点间隙 */
+.portfolio-card .song-list {
+  gap: 0.4rem 0.8rem;
+  margin-top: 0.4rem;
+}
+.portfolio-card .song-list li {
+  padding: 0.2rem 1.2rem;
+  font-size: 0.85rem;
+  background: rgba(255, 225, 240, 0.8);
+}
+
+/* 卡片内链接覆盖整个卡片 */
+.portfolio-card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.portfolio-card a:hover .card-title {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: #ee8eb0;
+}
+
+/* 分区标题（复用原 .section-head 和 .mixin-title，微调位置） */
+.section-head {
+  margin: 1.5rem 0 0.2rem;
+  font-size: 2.6rem;
+  letter-spacing: 6px;
+}
+.mixin-title {
+  font-size: 1.9rem;
+  margin: 2rem 0 1rem 5%;
+}
+
+/* 物料汇总区 (独立链接保持原风格) */
+.summary-links a {
+  color: #9a4b73;
+  font-weight: 500;
+  margin: 0 0.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+  background: rgba(255, 215, 230, 0.5);
+  transition: all 0.2s;
+  display: inline-block;
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255,255,255,0.7);
+}
+.summary-links a:hover {
+  background: #fbb9cf;
+  color: #431e31;
+  transform: translateY(-2px);
+}
+
+/* 导航微调 */
+.menu-toggle span { 
+  background: #ad5d82; 
+}
+nav ul.menu li a { 
+  color: #683952; 
+}
+
+/* 图片加载失败占位样式 - 保持正方形 */
+img.card-img[alt] {
+  font-size: 0.8rem;
+  text-align: center;
+  background: #f2d3e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;  /* 确保占位也是正方形 */
+  width: 100%;
+}
+
+/* ===== 媒体查询：手机单列 + 标题缩小 (融合原 media) ===== */
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;  /* 手机一列 */
+    padding: 1rem 5%;
+  }
+  .section-head {
+    font-size: 2.2rem;
+  }
+  .mixin-title {
+    margin-left: 5%;
+    font-size: 1.7rem;
+  }
+}
+
+/* 确保所有图片容器都是正方形 */
+.portfolio-card .card-img,
+.portfolio-card img:not(.logo) {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
+}
